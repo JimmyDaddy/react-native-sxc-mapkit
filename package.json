@@ -1,0 +1,19 @@
+{
+  "name": "react-native-sxc-mapkit",
+  "version": "0.0.1",
+  "description": "react-native mapkit geolocation background-location mapview baidumap",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react-native",
+    "mapkit",
+    "geolocation",
+    "background-location",
+    "mapview",
+    "baidumap"
+  ],
+  "author": "jimmydaddy",
+  "license": "ISC"
+}

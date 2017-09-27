@@ -1,0 +1,34 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion '25.0.0'
+
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 23
+        versionCode 5
+        versionName "0.2.0-alpha.5"
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs 'libs', 'jni'
+            aidl.srcDirs 'src/main/aidl'
+        }
+
+    }
+}
+
+dependencies {
+    compile 'com.facebook.react:react-native:+'
+    compile 'com.android.support:support-v4:+'
+    compile 'com.google.android.gms:play-services-location:+'
+    compile 'com.github.tony19:logback-android-core:1.1.1-6'
+    compile 'com.github.tony19:logback-android-classic:1.1.1-6'
+    compile 'org.slf4j:slf4j-api:1.7.21'
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    // amap api
+    compile 'com.amap.api:location:latest.integration'
+
+}

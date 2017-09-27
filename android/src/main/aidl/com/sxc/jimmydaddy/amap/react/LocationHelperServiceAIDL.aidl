@@ -1,0 +1,8 @@
+// LocationHelperService.aidl
+package com.sxc.jimmydaddy.amap.react;
+
+// Declare any non-default types here with import statements
+
+interface LocationHelperServiceAIDL {
+    void onFinishBind(int notiId);
+}
