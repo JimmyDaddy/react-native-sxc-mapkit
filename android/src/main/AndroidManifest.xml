@@ -35,9 +35,9 @@
         </service>
         <service
             android:name="com.sxc.jimmydaddy.bggeolocation.LocationHelperService"
-            android:process=":LocationHelperService">
+            android:process=":locationHelperService">
             <intent-filter>
-                <action android:name="com.sxc.jimmydaddy.bggeolocation.LocationHelperService"/>
+                <action android:name="com.sxc.jimmydaddy.bggeolocation.LocationHelperService" />
             </intent-filter>
         </service>
         <!-- 如果使用高德地图 -->

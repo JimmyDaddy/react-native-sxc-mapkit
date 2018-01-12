@@ -179,7 +179,7 @@ public class Utils {
         PackageManager pm = context.getPackageManager();
         List<ResolveInfo> resolveInfo = pm.queryIntentServices(implicitIntent, 0);
         // Make sure only one match was found
-        if (resolveInfo == null) {
+        if (resolveInfo == null || resolveInfo.isEmpty()) {
             return implicitIntent;
         }
 

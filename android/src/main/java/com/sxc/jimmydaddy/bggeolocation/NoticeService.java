@@ -10,8 +10,6 @@ import android.os.IBinder;
 import android.os.RemoteException;
 import android.support.annotation.Nullable;
 
-import com.sxc.jimmydaddy.amap.react.LocationHelperServiceAIDL;
-import com.sxc.jimmydaddy.amap.react.LocationServiceAIDL;
 import com.sxc.jimmydaddy.bggeolocation.utils.Utils;
 import com.marianhello.bgloc.Config;
 import com.marianhello.logging.LoggerManager;
@@ -50,7 +48,7 @@ public class NoticeService extends Service {
     }
 
 
-    private final String mHelperServiceName = "com.jimmydaddy.amap.LocationHelperService";
+    private final String mHelperServiceName = "com.jimmydaddy.bggeolocation.LocationHelperService";
     /**
      * 触发利用notification增加进程优先级
      */

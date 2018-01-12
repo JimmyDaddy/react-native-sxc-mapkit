@@ -359,7 +359,6 @@ public class BackgroundGeolocationModule extends ReactContextBaseJavaModule impl
 
     @ReactMethod
     public void stop(Callback success, Callback error) {
-//        doUnbindService();
         stopBackgroundService();
         success.invoke(true);
     }
@@ -541,6 +540,7 @@ public class BackgroundGeolocationModule extends ReactContextBaseJavaModule impl
         locationServiceIntent.addFlags(Intent.FLAG_FROM_BACKGROUND);
         // start service to keep service running even if no clients are bound to it
         currentActivity.startService(locationServiceIntent);
+        LocationStatusManager.getInstance().resetToInit(currentActivity.getApplicationContext());
         mIsServiceRunning = true;
 
 //
@@ -556,9 +556,10 @@ public class BackgroundGeolocationModule extends ReactContextBaseJavaModule impl
             return;
         }
 
-        log.info("Stopping bg service");
-        final Activity currentActivity = this.getCurrentActivity();
-        currentActivity.stopService(new Intent(currentActivity, LocationService.class));
+        log.error("Stopping bg service", "stop");
+//        final Activity currentActivity = this.getCurrentActivity();
+        getContext().sendBroadcast(Utils.getCloseBrodecastIntent());
+//        currentActivity.stopService(new Intent(currentActivity, LocationService.class));
 //        currentActivity.stopService(new Intent(currentActivity, BgLoccGuardService.class));
         mIsServiceRunning = false;
     }

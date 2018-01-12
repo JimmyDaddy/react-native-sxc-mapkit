@@ -8,8 +8,6 @@ import android.os.IBinder;
 import android.os.RemoteException;
 import android.support.annotation.Nullable;
 
-import com.sxc.jimmydaddy.amap.react.LocationHelperServiceAIDL;
-import com.sxc.jimmydaddy.amap.react.LocationServiceAIDL;
 import com.sxc.jimmydaddy.bggeolocation.utils.Utils;
 import com.marianhello.bgloc.Config;
 import com.marianhello.bgloc.data.ConfigurationDAO;
@@ -57,7 +55,7 @@ public class LocationHelperService extends Service {
 
     private ServiceConnection mInnerConnection;
     private void startBind() {
-        final String locationServiceName = "com.jimmydaddy.amap.LocationService";
+        final String locationServiceName = "com.jimmydaddy.bggeolocation.LocationService";
         mInnerConnection = new ServiceConnection() {
 
             @Override
@@ -107,6 +105,6 @@ public class LocationHelperService extends Service {
             config = intent.getParcelableExtra("config");
         }
 
-        return mBinder;
+        return mBinder.asBinder();
     }
 }
